@@ -18,9 +18,12 @@ $(window).on("load", function() {
 	})
 	
 	$("#search_b").on("click", function() {
-		  aux = id;
-			id = $("#search").val();
-			getjson();
+		  var aux2 = $("#search").val();
+			if (aux2 != "" && aux2 != id) {
+				aux = id;
+				id = aux2;
+				getjson();
+			}
 	})
 	
 });

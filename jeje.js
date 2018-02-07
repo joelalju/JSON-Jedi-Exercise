@@ -1,11 +1,28 @@
-var id = 549; 
+var id = 549;
+var aux = 549;
 
 $(window).on("load", function() {
 	getjson();
+	
 	$("#next").on("click", function() {
+		  aux = id;
 			id++;
 			getjson();
 	})
+	
+	$("#last").on("click", function() {
+		  var aux2 = id;
+			id = aux;
+			aux = aux2;
+			getjson();
+	})
+	
+	$("#search_b").on("click", function() {
+		  aux = id;
+			id = $("#search").val();
+			getjson();
+	})
+	
 });
 
 function getjson() {
